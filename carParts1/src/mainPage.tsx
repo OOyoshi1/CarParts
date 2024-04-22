@@ -46,7 +46,7 @@ export default function HeaderMain() {
 					<CarouselNext />
 				</Carousel>
 			</div>
-			<div className="flex w-full max-w-sm items-center space-x-2">
+			<div className="flex w-full max-w-sm items-center space-x-2 ml-20">
 				<Input placeholder="Найти деталь по Vin номеру" />
 				<Button className="bg-[#EFA7A7] hover:bg-[#eeb6b6] text-black font-bold">
 					Найти

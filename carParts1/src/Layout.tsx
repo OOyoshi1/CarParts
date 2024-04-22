@@ -10,8 +10,6 @@ export default function Layout() {
 			</header>
 
 			<Outlet />
-
-			<footer className="w-full row-auto">пока</footer>
 		</div>
 	);
 }
