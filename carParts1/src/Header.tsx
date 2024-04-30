@@ -1,6 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import { RegDialog } from "./registrationDialog";
+import { AuthDialog } from "./authDialog";
+
 export default function Header() {
 	return (
 		<div className="flex justify-start items-center">
@@ -21,16 +24,8 @@ export default function Header() {
 					<img className="h-10 mr-4" src="./src/assets/images/cart.png" />
 				</NavLink>
 
-				<NavLink to="/">
-					<button className="bg-[#ABBBF5] hover:bg-[#eeb6b6] text-black py-2 px-4 rounded-[10px] mr-4">
-						Войти
-					</button>
-				</NavLink>
-				<NavLink to="/">
-					<button className="bg-[#5594F4] hover:bg-[#eeb6b6] text-black py-2 px-4 rounded-[10px] mr-4">
-						Зарегистрироваться
-					</button>
-				</NavLink>
+				<AuthDialog />
+				<RegDialog />
 			</div>
 		</div>
 	);

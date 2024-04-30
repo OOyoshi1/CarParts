@@ -35,7 +35,40 @@ export default function CatalogPage() {
 				<div className="flex justify-center items-center mt-10">
 					<Separator orientation="vertical" className="bg-black " />
 				</div>
-				<div>sdfgdsfgdfgsdgf</div>
+				<div className="flex items-center  ">
+					<div className="p-4">
+						<ul>
+							<li>Abarth</li>
+							<li>Alfa Romeo</li>
+							<li>Audi</li>
+							<li>BMW</li>
+							<li>BYD</li>
+							<li>Chery</li>
+							<li>Chevrolet</li>
+							<li>Chrysler</li>
+							<li>Citroen</li>
+							<li>Dacia</li>
+							<li>Daewoo</li>
+							<li>Derways</li>
+						</ul>
+					</div>
+					<div>
+						<ul>
+							<li>Abarth</li>
+							<li>Alfa Romeo</li>
+							<li>Audi</li>
+							<li>BMW</li>
+							<li>BYD</li>
+							<li>Chery</li>
+							<li>Chevrolet</li>
+							<li>Chrysler</li>
+							<li>Citroen</li>
+							<li>Dacia</li>
+							<li>Daewoo</li>
+							<li>Derways</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 			<div className="flex w-full max-w-sm items-center space-x-2 ml-20">
 				<Input placeholder="Найти деталь по Vin номеру" />
