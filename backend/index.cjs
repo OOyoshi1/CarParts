@@ -12,9 +12,9 @@ app.use(function (req, res, next) {
 	next();
 });
 
-app.get("/", (req, res) => {
+app.post("/", (req, res) => {
 	carPart
-		.executeQuery("SELECT * from destinations")
+		.executeQuery(req.body)
 		.then((response) => {
 			res.status(200).send(response);
 		})

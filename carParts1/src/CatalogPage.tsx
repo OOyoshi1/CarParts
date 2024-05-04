@@ -4,8 +4,27 @@ import { Checkbox } from "./components/ui/checkbox";
 import { Separator } from "./components/ui/separator";
 import { Button } from "./components/ui/button";
 import { Input } from "./components/ui/input";
+import { useState, useEffect } from "react";
 
 export default function CatalogPage() {
+	const [merchants, setParts] = useState(false);
+	const [vin, setVin] = useState();
+	function getParts() {
+		fetch("http://localhost:3001", {
+			method: "POST",
+			body: JSON.stringify(vin),
+		})
+			.then((response) => {
+				return response.text();
+			})
+			.then((data) => {
+				setParts(data);
+			});
+	}
+
+	useEffect(() => {
+		getParts();
+	}, []);
 	return (
 		<div className="h-screen w-screen">
 			<div className="grid grid-cols-3 h-[70%] gap-5 ">
@@ -71,10 +90,19 @@ export default function CatalogPage() {
 				</div>
 			</div>
 			<div className="flex w-full max-w-sm items-center space-x-2 ml-20">
-				<Input placeholder="Найти деталь по Vin номеру" />
-				<Button className="bg-[#EFA7A7] hover:bg-[#eeb6b6] text-black font-bold">
+				<Input
+					value={vin}
+					onChange={(e) => setVin(e.target.value)}
+					placeholder="Найти деталь по Vin номеру"
+					id="findPart"
+				/>
+				<Button
+					className="bg-[#EFA7A7] hover:bg-[#eeb6b6] text-black font-bold"
+					onClick={getParts()}
+				>
 					Найти
 				</Button>
+				{merchants ? merchants : "There is no merchant data available"}
 			</div>
 		</div>
 	);

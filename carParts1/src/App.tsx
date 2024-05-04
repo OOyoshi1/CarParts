@@ -3,6 +3,7 @@ import Layout from "./Layout";
 import HeaderMain from "./mainPage";
 
 import { Route, Routes } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 function App() {
 	return (
